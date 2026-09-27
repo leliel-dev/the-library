@@ -1,19 +1,20 @@
 #import "@preview/obelisk:0.2.0": *
+#import "/shared/authors.typ": *
 
-#show: init.with(fonts: (sans: "Inter Display")) // obelisk tries to set "Inter" which defaults to another variant of the inter font,, nya thinks we want this one.
-#show link: underline
-#show link: set text(fill: blue)
-
+// obelisk tries to set "Inter" which defaults to another variant of the inter font
+#show: init.with(fonts: (sans: "Inter Display"))
+// obelisk 0.2.0 has leading for level 1 headings that produces clipping
 #show heading.where(level: 1): set text(bottom-edge: -9pt)
 
 = The library for the Leliel project
 
-#place(right + top, dx: -50pt, dy: 84pt, float: false)[
-  #set text(14pt, font: "Inter", luma(30%))
-  #set par(leading: 20pt)
-  author1\
-  author2
-]
+#{
+  v-step(-3)
+  set align(right)
+  set text(14pt, font: "Inter", luma(30%))
+  set par(leading: 20pt)
+  [Frøya Lydersen]
+}
 
 == Define
 We are making _frogs_.
